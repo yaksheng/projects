@@ -39,6 +39,14 @@ A series of hackathon projects demonstrating rapid development, innovative solut
 
 Personal explorations and technical demonstrations focusing on specific technologies or concepts, often with production-grade architectures.
 
+#### 20251228 - ETL Data Pipeline Project
+- **Directory**: [personal/20251228-etl/](personal/20251228-etl/)
+- **Description**: A robust ETL project for processing large datasets, showcasing cloud-based data processing, error resilience, and cost optimization techniques.
+- **Documentation**: [README](personal/20251228-etl/README.md)
+  - [Cloud Data Pipeline Documentation](personal/20251228-etl/cloud-data-pipeline-documentation.md)
+  - [Pipeline Performance Postmortem](personal/20251228-etl/postmortem-0-results-issue.md)
+  - [Project Takeaways](personal/20251228-etl/takeaways.md)
+
 #### 20251223 - Telegram AI Companion Bot
 - **Directory**: [personal/20251223-assistant/](personal/20251223-assistant/)
 - **Description**: A serverless Telegram bot powered by intelligent AI routing and deployed on Vercel, featuring a three-layer memory system, multimodal input support, and cost-optimized model selection.
