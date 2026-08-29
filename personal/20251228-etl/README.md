@@ -1,36 +1,25 @@
-# ETL Project Documentation
+# Cloud Query Pipeline: Documentation and Postmortem
 
-This directory contains documentation for an ETL project, including technical specifications, incident postmortems, and key takeaways.
+This directory documents a deployed cloud query pipeline and a postmortem for a zero results incident encountered during operation.
 
-## Documentation Structure
+## Incident Summary
 
-### Core Documentation
-- **[cloud-data-pipeline-documentation.md](./cloud-data-pipeline-documentation.md)** - Documentation for the cloud-based data pipeline
-- **[postmortem-0-results-issue.md](./postmortem-0-results-issue.md)** - Analysis of a pipeline performance issue
-- **[takeaways.md](./takeaways.md)** - Key lessons learned from project development
+The investigation identified three causes:
 
-## Project Overview
+1. Partition discovery failed under storage listing restrictions.
+2. A dataset partition identifier was incorrect.
+3. Result filtering was too restrictive.
 
-This ETL project demonstrates the construction of a robust data pipeline for processing large datasets, specifically accessing a 300TB subset of a 10PB corpus. The project showcases:
+The correction used explicit partition registration, corrected configuration, and broader filtering.
 
-1. **Cloud-Based Data Processing** - Leveraging serverless technologies for efficient data querying
-2. **Error Resilience** - Comprehensive error management and logging mechanisms
-3. **Cost Optimization** - Strategies for efficient resource utilization
-4. **Modular Design** - Components designed for maintainability and extensibility
+## Documentation
 
-## Getting Started
+- [Pipeline documentation](cloud-data-pipeline-documentation.md)
+- [Incident postmortem](postmortem-0-results-issue.md)
+- [Technical takeaways](takeaways.md)
 
-For setup instructions, please refer to the project's main documentation.
-
-## Key Components
-
-### Cloud Data Processing Pipeline
-The core pipeline demonstrates techniques for efficiently querying and processing large datasets (300TB subset of a 10PB corpus) using cloud-based technologies.
-
-## Support and Contributions
-
-For questions, issues, or contributions, please follow standard open-source project protocols.
+The documentation covers the deployed pipeline, the incident investigation, and the resulting engineering changes.
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project documentation is covered by the repository [MIT License](../../LICENSE).
