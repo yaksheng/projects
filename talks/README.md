@@ -4,7 +4,7 @@ Speaking records and presentation artifacts from 2026. Entries use "demonstratio
 
 ## August
 
-- **20 Aug 2026, AI Summit Seoul Conference:** "Agentic Commerce Is Here: Agent Payments and Real-World AI Workflows". Conference presentation at COEX. [Agenda](https://www.aisummitseoul.com/agenda) and [speaker page](https://www.aisummitseoul.com/richard-lee).
+- **19 Aug 2026, AI Summit Seoul Conference:** "Agentic Commerce Is Here: Agent Payments and Real-World AI Workflows". Conference presentation at COEX. [Agenda](https://www.aisummitseoul.com/agenda) and [speaker page](https://www.aisummitseoul.com/richard-lee).
 - **19 Aug 2026, AI Summit Seoul Expo:** "Agentic Commerce Is Here: How AI Agents Can Transact, Book, Pay, and Operate". Seminar and live demonstrations at COEX. [Expo program](https://www.aisummitseoul.com/expo-program) and [speaker page](https://www.aisummitseoul.com/richard-lee).
 
 ## June
