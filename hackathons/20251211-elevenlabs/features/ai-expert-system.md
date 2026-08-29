@@ -1,70 +1,31 @@
-# AI Expert System
+# AI Integration
 
-SourceVoice's AI expert system combines specialized manufacturing knowledge with advanced generative AI to provide expert negotiation guidance for injection molding procurement.
+SourceVoice combines model APIs to answer manufacturing questions, draft negotiation prompts, structure cost considerations, and request visual references.
 
-## Core Capabilities
+## Prototype Flow
 
-### Manufacturing Knowledge Base
-- **Material Science**: Comprehensive database of plastic materials and their properties
-- **Mold Design Principles**: Best practices for injection mold geometry and construction
-- **Cost Calculation**: Algorithms for material, labor, and overhead cost estimation
-- **Industry Standards**: Compliance requirements and quality benchmarks
-- **Supplier Evaluation**: Criteria for assessing manufacturer capabilities
+1. Collect the user's question, language, and part context.
+2. Include recent conversation state in the model request.
+3. Ask for a structured response containing assumptions and negotiation considerations.
+4. Optionally request an image from the configured image model.
+5. Present the result for user review.
 
-### Multi-Model AI Architecture
-- **Claude Integration**: Specialized in complex manufacturing reasoning and analysis
-- **Gemini Integration**: Handles natural language generation and image creation
-- **Knowledge Fusion**: Combines domain expertise with general intelligence
-- **Continuous Learning**: Adapts to new industry trends and user feedback
+## Implementation Notes
 
-### Real-time Analysis
-- **Contextual Understanding**: Maintains conversation history and project details
-- **Rapid Processing**: Generates responses in seconds for interactive negotiation
-- **Multi-language Support**: Processes and generates content in English and Mandarin
-- **Visualization Integration**: Connects with mold rendering and cost visualization
+- Claude and Gemini are accessed through server-side integration code.
+- Provider credentials are supplied through environment variables.
+- Zustand maintains client-side conversation and feature state.
+- Provider and validation errors should be surfaced to the interface.
 
-## Technical Implementation
+## Limitations
 
-### AI Integration Layer
+The prototype does not establish a curated manufacturing knowledge base, model tuning, continuous learning, accuracy benchmarks, or validated cost prediction. Responses can be incomplete or wrong and require review against drawings, specifications, supplier data, and engineering judgment.
 
-The AI expert system integrates with leading generative AI platforms:
+## Future Work
 
-- **Claude (Anthropic)** for specialized manufacturing expertise and complex reasoning
-- **Gemini (Google Generative AI)** for natural language generation and visual capabilities
+- Add source citations and assumption tracking.
+- Define evaluation sets with manufacturing specialists.
+- Add uncertainty and refusal behavior for insufficient inputs.
+- Record model and prompt versions for reproducibility.
 
-Both APIs are accessed through secure environment variables with appropriate error handling and rate limiting.
-
-### Knowledge Engineering
-
-The AI expert system leverages advanced techniques to ensure high-quality responses:
-
-- **Structured Knowledge Base**: Organized information on injection molding processes, materials, and negotiation strategies
-- **Contextual Reasoning**: Maintains conversation context for coherent, relevant advice
-- **Validation Framework**: Ensures responses align with industry best practices and accuracy standards
-- **Error Handling**: Graceful degradation with fallback mechanisms for uncertain situations
-
-## User Benefits
-
-- **Expert Guidance**: Access to specialized manufacturing knowledge without hiring consultants
-- **Data-driven Decisions**: Negotiate based on accurate cost estimates and market benchmarks
-- **Risk Reduction**: Identify potential issues in mold design and production processes
-- **Competitive Advantage**: Leverage AI insights to secure better pricing and terms
-- **Continuous Improvement**: Learn from AI recommendations to improve future negotiations
-
-## Performance Metrics
-
-- **Response Accuracy**: 90%+ for manufacturing knowledge queries
-- **Cost Estimate Precision**: Within 10% of actual manufacturing costs
-- **Processing Speed**: <5 seconds for complex analysis
-- **User Satisfaction**: 4.7/5 based on feedback surveys
-
-## Technical Innovation
-
-- **Hybrid AI Approach**: Combines strengths of different AI models for optimal results
-- **Domain-specific Tuning**: Adapted to injection molding industry terminology and practices
-- **Contextual Memory**: Maintains project context across multiple interactions
-- **Scalable Architecture**: Designed to support additional manufacturing domains
-
----
-
-[Back to Overview](../README.md)
+[Back to overview](../README.md)

@@ -1,6 +1,6 @@
 # Financial Wellness Platform - User Journey
 
-A comprehensive walkthrough of the platform user experience from first interaction to ongoing engagement.
+This document describes the prototype journey and proposed longer-term interactions.
 
 ## First Time Experience
 
@@ -11,7 +11,7 @@ sequenceDiagram
     participant User
     participant Browser
     participant App
-    
+
     User->>Browser: Search for financial wellness app
     Browser-->>User: Show search results
     User->>Browser: Visit platform website
@@ -65,7 +65,7 @@ graph TD
 sequenceDiagram
     participant User
     participant App
-    
+
     User->>App: Open platform
     App-->>User: Display Virtual Companion dashboard
     App-->>User: Show daily stats:
@@ -79,7 +79,7 @@ sequenceDiagram
 
 #### Tap Interaction
 - **Location**: Center of screen where Virtual Companion resides
-- **Feedback**: 
+- **Feedback**:
   - Visual: Pet glows and animates
   - Audio: Subtle sound effect
   - Text: "FlowCoins +5!"
@@ -101,7 +101,7 @@ sequenceDiagram
 sequenceDiagram
     participant User
     participant Coach
-    
+
     User->>Coach: "How do I start budgeting?"
     Coach-->>User: Explain budgeting basics
     Coach-->>User: "Would you like to learn more about:"
@@ -140,7 +140,7 @@ graph TD
     D --> E[Investment Start]
     E --> F[Retirement Progress]
     F --> G[Financial Freedom]
-    
+
     style A fill:#fbbf24,stroke:#0f172a,stroke-width:2px
     style B fill:#14b8a6,stroke:#0f172a,stroke-width:2px
     style C fill:#64748b,stroke:#0f172a,stroke-width:2px
@@ -179,7 +179,7 @@ graph TD
     B --> C[Fox]
     C --> D[Dragon]
     D --> E[Guardian]
-    
+
     style A fill:#14b8a6,stroke:#0f172a,stroke-width:2px
     style B fill:#2dd4bf,stroke:#0f172a,stroke-width:2px
     style C fill:#fbbf24,stroke:#0f172a,stroke-width:2px
@@ -203,7 +203,7 @@ graph TD
 - **Threshold**: Increasing XP required for each level
 - **Benefits**: New features unlocked at certain levels
 
-## Long-Term Journey
+## Proposed Long-Term Journey
 
 ### 1. Financial Growth Tracking
 
@@ -246,7 +246,7 @@ graph TD
 - **Suggestions**: Personalized recommendations
 - **Trends**: Visualization of engagement patterns
 
-## Offline Experience
+## Proposed Offline Experience
 
 ### PWA Capabilities
 - **Core Functions**: Access to dashboard and pet state
@@ -254,7 +254,7 @@ graph TD
 - **Cache Content**: Previously viewed content available
 - **Sync Mechanism**: Background sync when internet restored
 
-## Security & Privacy
+## Production Security and Privacy Requirements
 
 ### User Control
 - **Data Visibility**: Clear explanation of data collected
@@ -262,10 +262,6 @@ graph TD
 - **Account Management**: Easy profile updates and deletion
 
 ### Security Features
-- **Authentication**: Secure login mechanisms
-- **Encryption**: All data transmitted securely
-- **Regular Updates**: Security patches and improvements
-
----
-
-*"A journey designed to make financial wellness engaging, accessible, and rewarding"*
+- **Authentication**: Implement and test account authentication and authorization
+- **Transport Protection**: Define and verify protection for transmitted data
+- **Maintenance**: Establish a security update and incident-response process

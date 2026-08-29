@@ -18,6 +18,16 @@ The experience makes financial learning feel approachable. Progress through less
 
 The project documentation covers React, Vite, Tailwind CSS, Framer Motion, Three.js, Supabase, PostgreSQL, and Gemini.
 
+## Documentation
+
+- [Feature scope](FEATURES.md)
+- [Quick start and prototype walkthrough](QUICKSTART.md)
+- [Technical design](TECHNICAL.md)
+- [Interaction design](DESIGN.md)
+- [User journey](USER_JOURNEY.md)
+
+This was a hackathon prototype. Security controls, production operations, and performance targets described in the technical design are proposed unless explicitly identified as implemented and tested.
+
 ## License
 
 This project documentation is covered by the repository [MIT License](../../LICENSE).

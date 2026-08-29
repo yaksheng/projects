@@ -1,10 +1,10 @@
 # GalaxyRVR Navigation System
 
-The GalaxyRVR navigation system enables autonomous movement to targets and waypoints while avoiding obstacles in real-time.
+The GalaxyRVR hackathon prototype explores movement toward targets and waypoints with obstacle-avoidance logic. The behavior described here is designed or prototyped rather than established by a documented hardware validation.
 
 ## Overview
 
-The navigation system integrates multiple technologies to achieve reliable autonomous movement:
+The navigation system integrates:
 - Target detection and tracking
 - Path planning and optimization
 - Obstacle avoidance
@@ -35,22 +35,22 @@ graph TD
 - Tracking across multiple camera frames
 
 ### Path Planning
-- Generate optimal path to target
+- Generate a path to the target
 - Consider obstacle positions
 - Path smoothing for efficient movement
 - Support for multiple waypoints
 - Dynamic replanning capability
 
-### Obstacle Avoidance
+### Obstacle-Avoidance Design
 - Real-time obstacle detection
 - Path adjustment based on sensor data
 - Collision avoidance algorithms
-- Emergency stop mechanisms
+- Proposed emergency-stop trigger
 
 ### Dead Reckoning
 - Estimate robot position from wheel movements
 - Compensate for camera delays
-- Enhance navigation accuracy
+- Compare wheel-based and vision-based position estimates
 - Integrate with vision-based localization
 
 ### Motor Control
@@ -76,7 +76,7 @@ graph TD
 - Adaptive path planning
 - Response to environmental changes
 
-### 4. Error Recovery
+### 4. Proposed Error Recovery
 - Handle navigation failures
 - Lost target recovery
 - Obstacle blockage strategies
@@ -101,13 +101,9 @@ graph LR
 - Resolve conflicting sensor data
 - Estimate confidence levels for sensor input
 
-## Performance Characteristics
+## Operating Parameters
 
-- **Navigation Accuracy**: ±2 cm position error
-- **Obstacle Detection Range**: Up to 30 cm
-- **Response Time**: <100 ms for obstacle avoidance
-- **Maximum Speed**: 10 cm/s (adjustable)
-- **Target Acquisition**: <500 ms
+Position error, obstacle range, control-loop latency, target-acquisition time, and safe speed depend on calibration, lighting, surface, sensor placement, and hardware. The hackathon documentation does not provide a reproducible benchmark for these values.
 
 ## Usage Examples
 
@@ -128,7 +124,7 @@ graph LR
 - Wheel diameter measurement
 - Encoder counts per revolution
 
-## Safety Features
+## Proposed Safety Requirements
 
 - Emergency stop on collision detection
 - Sensor failure detection
@@ -136,14 +132,14 @@ graph LR
 - Manual override capability
 - System health monitoring
 
-## Testing and Validation
+Implementation and effectiveness of these controls are not established. Physical operation requires independent stop controls and tests for sensor, power, communication, and control failures.
 
-The navigation system undergoes rigorous testing:
-- Simulation-based unit tests
-- Integration tests with real hardware
-- Edge case scenario testing
-- Performance benchmarking
-- Environmental condition testing
+## Validation Needed
+
+- Compare simulated paths with measured hardware runs.
+- Test stopping distance and manual override under defined speeds and surfaces.
+- Record localization error and control-loop latency under named conditions.
+- Exercise lost-target, blocked-path, sensor-failure, and low-battery cases.
 
 ## Future Enhancements
 

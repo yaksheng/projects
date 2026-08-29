@@ -1,16 +1,16 @@
-# GalaxyRVR Public Showcase
+# GalaxyRVR Project Summary
 
-Welcome to the public showcase for the GalaxyRVR autonomous navigation system. This repository contains comprehensive documentation of the system's architecture, features, and capabilities, designed for public viewing without exposing proprietary logic.
+GalaxyRVR is a hackathon prototype exploring autonomous-navigation techniques for a small mobile robot. This summary links its architecture, sensor, vision, navigation, simulation, and setup notes.
 
 ## What is GalaxyRVR?
 
-GalaxyRVR is an advanced autonomous navigation system for small robots, featuring:
+GalaxyRVR combines:
 
-- **Hybrid Vision System**: Combines overhead (global view) and onboard (local view) cameras
-- **Sensor Fusion**: Integrates ultrasonic, infrared, and vision sensors
-- **Advanced Path Planning**: Generates optimal paths with obstacle avoidance
-- **Simulation Environment**: Test algorithms without physical hardware
-- **Modular Architecture**: Easy to extend and customize
+- **Hybrid Vision Design**: Combines overhead and onboard camera observations
+- **Sensor-Fusion Design**: Combines ultrasonic, infrared, and vision inputs
+- **Path-Planning Design**: Represents waypoint paths and obstacle-avoidance inputs
+- **Simulation Environment**: Exercises navigation logic without physical hardware
+- **Modular Architecture**: Separates sensor, vision, planning, and control concerns
 
 ## Repository Structure
 
@@ -68,10 +68,6 @@ The repository contains documentation organized into architecture, features, and
 - Integration with IoT systems
 - Outdoor navigation capabilities
 
-## Contact
+## Limitations
 
-For more information about the GalaxyRVR project, please contact the development team.
-
----
-
-*This documentation is provided for educational and demonstration purposes. Proprietary algorithms and implementation details have been omitted to protect intellectual property.*
+The documentation describes a hackathon system and setup assumptions. Hardware behavior depends on calibration, sensor placement, lighting, and the robot configuration.

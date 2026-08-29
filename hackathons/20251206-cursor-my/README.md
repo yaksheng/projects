@@ -14,12 +14,16 @@ This hackathon project built a web workflow that turns a product brief into desi
 
 - [Frontend design](frontend/)
 - [Backend design](backend/)
+- [Getting started](docs/getting-started.md)
+- [User guide](docs/user-guide.md)
+- [Architecture](docs/architecture.md)
+- [Prototype API reference](docs/api-reference.md)
 
 ## Technology
 
 The project documentation covers Next.js, TypeScript, Zustand, Convex, and three dimensional design previews.
 
-Generated outputs would require engineering validation before manufacturing.
+Generated outputs are concept artifacts. Every mechanical, electrical, firmware, bill-of-materials, and manufacturing output requires review and validation by qualified engineers before prototyping, procurement, or manufacturing.
 
 ## License
 

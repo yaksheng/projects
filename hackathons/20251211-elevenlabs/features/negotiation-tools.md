@@ -1,85 +1,31 @@
 # Negotiation Tools
 
-SourceVoice provides a comprehensive suite of negotiation tools specifically designed for injection molding procurement, empowering users with data-driven strategies and actionable insights.
+## Prototype Behavior
 
-## Core Capabilities
+SourceVoice organizes manufacturing inputs into a negotiation view containing:
 
-### Cost Estimation Engine
-- **Real-time Cost Calculations**: Instant estimates based on mold specifications and material requirements
-- **Multi-scenario Analysis**: Compare costs across different manufacturing options
-- **Sensitivity Analysis**: Understand how changes in parameters affect final costs
-- **Historical Data Comparison**: Benchmark against industry averages and historical pricing
+- Material, tooling, labor, quantity, and overhead considerations
+- A visual cost breakdown
+- Suggested questions and negotiation prompts
+- English and Mandarin output
+- A package that can be reviewed during the conversation
 
-### Negotiation Strategy Generator
-- **AI-Powered Recommendations**: Custom negotiation strategies based on supplier context
-- **Bilingual Scripts**: Pre-generated negotiation scripts in English and Mandarin
-- **Counteroffer Calculators**: Determine optimal counteroffers based on cost analysis
-- **Term Analysis**: Review contract terms and identify potential issues
+The estimates and recommendations are model-generated decision aids. They are not supplier quotations, contract review, legal advice, or verified market benchmarks.
 
-### Supplier Evaluation Tools
-- **Capability Assessment**: Evaluate supplier capabilities against project requirements
-- **Risk Analysis**: Identify potential risks in supplier relationships
-- **Performance Metrics**: Track supplier performance over time
-- **Comparative Analysis**: Compare multiple suppliers side-by-side
+## Inputs
 
-### Contract Management
-- **Template Library**: Pre-approved contract templates for injection molding projects
-- **Clause Analyzer**: AI-powered analysis of contract clauses
-- **Compliance Checker**: Ensure contracts meet industry standards
-- **Negotiation History**: Track changes and decisions throughout negotiations
+The workflow can use part requirements, material, quantity, tooling assumptions, schedule, budget, and supplier context. Missing or uncertain inputs should remain visible rather than being treated as established facts.
 
-## Technical Implementation
+## Review Requirements
 
-### Cost Estimation System
+- Confirm material and process assumptions with an engineer.
+- Request itemized quotations from qualified suppliers.
+- Verify tooling, tolerances, quality controls, logistics, taxes, and payment terms.
+- Have contracts and regulatory requirements reviewed by qualified professionals.
+- Treat translations and suggested wording as drafts for bilingual review.
 
-The cost estimation tool uses industry-standard formulas and up-to-date market data to provide accurate cost projections:
+## Future Work
 
-- **Material Cost Calculation**: Based on material type, weight, and quantity requirements
-- **Tooling Cost Estimation**: Factors in mold type, cavity count, and dimensional complexity
-- **Labor Cost Analysis**: Considers cycle time, production volume, and regional labor rates
-### Negotiation Strategy Generation
+Future versions could add quotation comparison, assumption provenance, revision history, uncertainty ranges, and export. These features should be evaluated before any outcome or savings claims are made.
 
-The negotiation strategy generator creates tailored approaches based on:
-
-- **Project Context**: Requirements, budget, and timeline
-- **Supplier Profile**: Capabilities, history, and market position
-- **Industry Standards**: Current pricing trends and competitive benchmarks
-- **User Preferences**: Risk tolerance and negotiation priorities
-
-### Negotiation Package Management
-
-The negotiation package management system provides:
-
-- **Structured Documentation**: Organizes negotiation materials in a user-friendly format
-- **Bilingual Support**: Generates content in both English and Mandarin
-- **Export Capabilities**: Allows users to download or share negotiation packages
-- **Version Control**: Tracks changes and updates to negotiation strategies
-
-## User Benefits
-
-- **Data-Driven Negotiations**: Negotiate with confidence using accurate cost calculations
-- **Time Savings**: Automatically generate negotiation strategies and scripts
-- **Optimal Outcomes**: AI recommendations help secure better pricing and terms
-- **Reduced Risk**: Identify potential issues in contracts and supplier relationships
-- **Improved Collaboration**: Share negotiation packages with team members for feedback
-
-## Performance Metrics
-
-- **Cost Estimation Accuracy**: 90%+ alignment with actual manufacturing costs
-- **Strategy Effectiveness**: 85% of users report better negotiation outcomes
-- **Time Savings**: 70% reduction in negotiation preparation time
-- **User Satisfaction**: 4.9/5 based on feedback surveys
-- **ROI**: Average 15-20% cost savings on injection molding projects
-
-## User Experience
-
-The negotiation tools are designed to be:
-- **Comprehensive**: All-in-one solution for injection molding procurement
-- **User-Friendly**: Simple interface for complex negotiation tasks
-- **Customizable**: Tailor tools to specific project requirements
-- **Educational**: Learn best practices through AI-generated recommendations
-- **Collaborative**: Share information with team members and stakeholders
-
----
-
-[Back to Overview](../README.md)
+[Back to overview](../README.md)

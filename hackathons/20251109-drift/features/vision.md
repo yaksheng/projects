@@ -1,10 +1,10 @@
 # GalaxyRVR Vision System
 
-The GalaxyRVR vision system provides the robot with the ability to perceive and understand its environment using camera technology, enabling autonomous navigation and target tracking.
+The GalaxyRVR hackathon prototype uses camera processing to produce observations for navigation and target-tracking experiments.
 
 ## Vision System Overview
 
-GalaxyRVR employs a **hybrid vision approach** that combines two camera perspectives:
+The hybrid-vision design combines two camera perspectives:
 
 1. **Overhead Camera**: Provides a global view of the arena for localization and path planning
 2. **Onboard Camera**: Captures local environment for obstacle detection and fine navigation
@@ -116,13 +116,9 @@ graph TD
 - Size measurement
 - Orientation determination
 
-## Performance Characteristics
+## Performance Evaluation
 
-- **Frame Rate**: Up to 30 fps
-- **Target Detection Range**: Up to 1.5 meters
-- **Line Detection Accuracy**: ±1 degree
-- **Processing Latency**: <50 ms
-- **Memory Usage**: Efficient for embedded systems
+Frame rate, detection range, heading error, latency, and memory use depend on the cameras, compute device, calibration, lighting, target size, and scene. These characteristics require measurement under a documented test setup.
 
 ## Calibration Process
 
@@ -146,13 +142,15 @@ graph TD
 - Virtual line following
 - Calibration simulation
 
-## Benefits of Hybrid Vision
+## Intended Benefits of Hybrid Vision
 
 - **Global Context**: Overhead camera provides complete arena view
 - **Local Detail**: Onboard camera captures immediate environment
-- **Redundancy**: Multiple perspectives for reliable operation
+- **Redundancy**: Multiple perspectives for comparison and fallback
 - **Flexibility**: Adapt to different environmental conditions
-- **Accuracy**: Combined data for precise navigation
+- **Cross-checking**: Compare global and local observations before navigation updates
+
+These benefits require calibration and physical testing. The documentation does not establish robust fallback, measured accuracy, or safe operation when either camera is unavailable.
 
 ## Future Enhancements
 

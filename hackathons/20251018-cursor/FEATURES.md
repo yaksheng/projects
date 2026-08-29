@@ -1,6 +1,6 @@
-# Financial Wellness Platform - Feature Showcase
+# Financial Wellness Platform Feature Scope
 
-A comprehensive overview of the platform's key features and capabilities.
+This document describes the hackathon prototype and product concepts. Items in the proposed sections require implementation and validation before release.
 
 ## 3D Virtual Companion
 
@@ -128,6 +128,8 @@ Visualize your financial journey through engaging, interactive maps that represe
 
 ## PWA Features
 
+The following are proposed PWA capabilities; implementation and browser testing are not established by this documentation.
+
 ### Progressive Web App Capabilities
 - **Offline Access**: Basic functionality available without internet connection
 - **Home Screen Installation**: Add to device home screen like a native app
@@ -137,11 +139,13 @@ Visualize your financial journey through engaging, interactive maps that represe
 
 ## Security Features
 
+The following are production requirements, not verified prototype controls.
+
 ### User Data Protection
-- **Authentication**: Secure email/password or social media login
-- **Data Encryption**: End-to-end encryption for sensitive information
+- **Authentication**: Add and test account authentication
+- **Data Encryption**: Define and verify protection for sensitive information
 - **Privacy Controls**: User-managed data sharing preferences
-- **Compliance**: Built with industry-standard security practices
+- **Assessment**: Review the implementation against named security and privacy requirements
 
 ### Parental Controls
 - **Account Restrictions**: Manage access for younger users
@@ -161,11 +165,9 @@ Visualize your financial journey through engaging, interactive maps that represe
 
 ## Social Features
 
+These community features are proposed future work.
+
 ### Community Elements
 - **Achievement Sharing**: Optional social sharing of milestones
 - **Leaderboards**: Anonymous progress comparison (opt-in)
 - **Community Challenges**: Participate in group financial activities
-
----
-
-*"Our platform combines cutting-edge technology with behavioral science to make financial wellness engaging and accessible"*

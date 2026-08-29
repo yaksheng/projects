@@ -1,6 +1,6 @@
 # Financial Wellness Platform - Design Documentation
 
-A comprehensive overview of the platform's visual design, UX principles, and design system.
+An overview of the prototype's visual design, interaction principles, and proposed design system.
 
 ## Design Philosophy
 
@@ -110,7 +110,7 @@ graph TD
 sequenceDiagram
     participant User
     participant App
-    
+
     User->>App: Open platform
     App-->>User: Show splash screen
     App-->>User: Present welcome message
@@ -128,7 +128,7 @@ sequenceDiagram
 sequenceDiagram
     participant User
     participant App
-    
+
     User->>App: Open platform
     App-->>User: Display Virtual Companion dashboard
     User->>App: Tap pet (1-5 times)
@@ -165,7 +165,7 @@ sequenceDiagram
 ### Core Animation Principles
 - **Purposeful**: Every animation serves a clear UX goal
 - **Subtle**: Avoid distracting or overwhelming effects
-- **Smooth**: 60fps animations with easing functions
+- **Smooth**: Use easing and measure animation performance on target devices
 - **Consistent**: Uniform timing and style across the app
 
 ### Animation Types
@@ -221,21 +221,23 @@ sequenceDiagram
 - **Circular Progress**: Ring indicator for percentage completion
 - **Level Indicator**: Visual representation of pet level
 
-## Accessibility Design
+## Accessibility Targets
 
 ### Core Accessibility Features
-- **Color Contrast**: WCAG AA compliant color ratios
-- **Keyboard Navigation**: Full keyboard accessibility
-- **Screen Reader Support**: ARIA labels and roles
+- **Color Contrast**: Measure against WCAG AA contrast criteria
+- **Keyboard Navigation**: Provide and test keyboard access
+- **Screen Reader Support**: Add semantic structure, labels, and roles
 - **Touch Target Size**: Minimum 44x44px for interactive elements
 - **Text Scaling**: Support for system text size adjustments
 
-### Accessibility Testing
+### Proposed Accessibility Testing
 - **Automated Testing**: Regular runs of accessibility checkers
 - **Manual Testing**: Human testing with screen readers
 - **User Testing**: Feedback from users with disabilities
 
 ## Usability Testing
+
+The following methods are proposed; this document does not establish that a user study was completed.
 
 ### Testing Methods
 - **Remote Usability Testing**: Unmoderated testing with real users
@@ -243,11 +245,11 @@ sequenceDiagram
 - **A/B Testing**: Comparing different design approaches
 - **Feedback Surveys**: Collecting user opinions and suggestions
 
-### Key Insights
-- **Mobile Focus**: Users primarily engage on smartphones
-- **Calm Design**: Reduced anxiety compared to traditional finance apps
-- **Reward System**: Strong motivator for consistent engagement
-- **AI Coach**: Valued for personalized, non-judgmental guidance
+### Evaluation Questions
+- Can users complete the core flow on a phone?
+- Does the visual treatment reduce distraction without obscuring information?
+- Do rewards support learning without encouraging excessive engagement?
+- Do users understand the limits of AI-generated financial education?
 
 ## Design Evolution
 
@@ -262,7 +264,3 @@ sequenceDiagram
 - **Expanded 3D Elements**: Additional interactive 3D components
 - **Adaptive Design**: Interface that evolves with user progress
 - **Social Features**: Design for meaningful social connections
-
----
-
-*"Design that makes financial wellness approachable, engaging, and calm"*

@@ -1,6 +1,6 @@
 # Getting Started with AI Hardware Design Platform
 
-Welcome to the AI Hardware Design Platform! This guide will help you set up and start using the platform to design and build hardware products.
+This guide summarizes the documented setup and prototype workflow. The application source is maintained separately, so commands and environment variables should be taken from that source repository.
 
 ## Prerequisites
 
@@ -29,10 +29,10 @@ Open your browser and navigate to `http://localhost:3000`
 1. **Sign In** - Use the mock authentication to get started
 2. **Create a New Project** - Click "Start Building" on the homepage
 3. **Submit Your Concept** - Describe what hardware product you want to build
-4. **Review Generated Design** - The AI will generate initial design concepts
+4. **Review Generated Concept** - Inspect the generated concept and its assumptions
 5. **Refine Your Design** - Make adjustments to the generated design
-6. **Download Files** - Get all necessary manufacturing files
-7. **Place Order** - Proceed to production
+6. **Download Files** - Review the available concept artifacts
+7. **Review Order Flow** - Continue through the demonstration order-planning screen
 
 ## Development Workflow
 
@@ -44,7 +44,7 @@ graph TD
     D --> E[Start Development Servers]
     E --> F[Build Features]
     F --> G[Test Changes]
-    G --> H[Deploy to Production]
+    G --> H[Review Prototype Build]
 ```
 
 ## Additional Resources
@@ -69,8 +69,4 @@ graph TD
    - Ensure Convex dev server is running
    - Check network connectivity
 
-### Getting Help
-
-- Check the [official documentation](https://docs.protoai.com)
-- Join our [community forum](https://forum.protoai.com)
-- Submit an issue on [GitHub](https://github.com/protoai/protoai/issues)
+Generated hardware outputs require engineering review and physical validation before procurement or manufacturing.

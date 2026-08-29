@@ -8,7 +8,7 @@ The project uses PostgreSQL for data storage, with a primary table storing user-
 
 ### Core Data Model
 
-The database design follows a normalized structure with clear separation of concerns. The primary interaction table uses a mix of standard data types and flexible JSONB columns to balance structure and adaptability.
+The primary interaction table uses standard data types and JSONB columns for interaction and provider data.
 
 #### Key Design Considerations:
 - **Unique Identification**: Primary key for each interaction record
@@ -21,7 +21,7 @@ The database design follows a normalized structure with clear separation of conc
 
 ### Indexing Strategy
 
-The database uses strategic indexing to optimize query performance:
+The documented indexes support observed query paths:
 - **BTREE Indexes**: Applied to frequently queried fields for fast lookup
 - **JSONB Indexing**: GIN indexes for efficient querying of semi-structured data
 - **Composite Indexes**: Combined indexes for common query patterns
@@ -42,29 +42,18 @@ Analysis revealed distinct usage patterns across different data categories:
 - Integration-specific identifiers
 - Detailed token usage metrics (not consistently available)
 - Full provider response data (not consistently stored)
-- Advanced analytics and routing information
+- Optional analytics and routing fields
 
 ### Data Distribution
 
-The database contains a significant volume of interaction records with:
+The analyzed interaction records include:
 - Multiple AI providers being used
 - Varied message lengths and complexity
-- Rich context information for conversations
-
-## Model Usage Statistics
-
-### AI Model Usage
-
-```mermaid
-pie
-title AI Model Usage
-"GPT" : 70
-"Gemini" : 30
-```
+- Conversation-context fields
 
 ### Gemini Model Migration
 
-During the project, records were migrated from generic model identifiers to a more specific format to improve data consistency for future analysis.
+During the project, records were migrated from generic model identifiers to a more specific format for future analysis.
 
 ## Data Cleaning Processes
 
@@ -95,9 +84,8 @@ During the project, records were migrated from generic model identifiers to a mo
 
 ### Validation
 
-- Input validation in application code ensures data consistency
-- Database-level constraints prevent invalid data entry
-- Regular data integrity checks performed during maintenance
+- Primary-key and documented not-null constraints enforce their database invariants.
+- Application input validation and recurring integrity checks are recommended but are not established by this analysis.
 
 ## Performance Optimization
 
@@ -109,9 +97,7 @@ During the project, records were migrated from generic model identifiers to a mo
 
 ### Query Optimization
 
-- Use of prepared statements to reduce query parsing overhead
-- Efficient pagination for large result sets
-- Selective column retrieval to minimize data transfer
+Prepared statements, pagination, and selective retrieval should be evaluated against observed query paths; their use is not established by this document.
 
 ## Future Considerations
 
@@ -125,7 +111,7 @@ During the project, records were migrated from generic model identifiers to a mo
 
 - Implement automated data archiving for older records
 - Define retention periods based on data type and usage
-- Ensure compliance with data privacy regulations
+- Define retention and deletion requirements after a privacy review
 
 ### Enhanced Metrics
 

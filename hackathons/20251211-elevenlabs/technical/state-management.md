@@ -16,42 +16,42 @@ graph TD
             VisualizationSlice["Visualization Slice"]
         end
     end
-    
+
     subgraph ConversationSlice["Conversation Slice"]
         Messages["Messages"]
         Input["Input"]
         Status["Status"]
         History["History"]
     end
-    
+
     subgraph VoiceSlice["Voice Slice"]
         IsRecording["IsRecording"]
         AudioChunks["Audio Chunks"]
         VoiceStatus["Status"]
         MediaRecorder["Media Recorder"]
     end
-    
+
     subgraph NegotiationSlice["Negotiation Slice"]
         PackageDetails["Package Details"]
         CostBreakdown["Cost Breakdown"]
         Strategy["Strategy"]
         NegHistory["History"]
     end
-    
+
     subgraph VisualizationSlice["Visualization Slice"]
         Image["Image"]
         Specs["Specs"]
         VisStatus["Status"]
         DisplaySettings["Display Settings"]
     end
-    
+
     subgraph ReactComponents["React Components"]
         ChatPanel["Chat Panel"]
         VoiceInput["Voice Input"]
         PackageBuilder["Package Builder"]
         Visualization["Visualization"]
     end
-    
+
     ChatPanel --> ConversationSlice
     VoiceInput --> VoiceSlice
     PackageBuilder --> NegotiationSlice

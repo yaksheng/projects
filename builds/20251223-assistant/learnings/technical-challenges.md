@@ -33,10 +33,10 @@ function getExponentialBackoffDelay(retries: number, baseDelay: number = 1000, m
 
 ### Lessons Learned
 
-- Rate limit handling is essential for production AI applications
-- Exponential backoff with jitter effectively distributes retry attempts
-- Monitoring token usage helps anticipate and prevent rate limit issues
-- Setting reasonable timeouts ensures the system remains responsive
+- Provider rate-limit errors need an explicit terminal failure path.
+- Exponential backoff with jitter spaces retry attempts; its effect was not benchmarked here.
+- Token-usage monitoring would help diagnose provider limits but is not established as implemented.
+- Timeout values should be measured against actual request behavior.
 
 ## 2. "Who am I?" Response Timeout
 
@@ -62,7 +62,7 @@ Increased timeouts to 60 seconds in both components:
 - Complex AI models may require longer processing times
 - Setting appropriate timeouts is critical for user experience
 - Different prompts may require different processing times
-- Monitoring response times helps identify performance bottlenecks
+- Recording response times would make slow paths easier to identify.
 
 ## 3. Contaminated AI Response Search Failure
 
@@ -96,7 +96,7 @@ ORDER BY created_at DESC;
 
 - AI responses can contain unexpected whitespace or encoding issues
 - Partial pattern matching is more robust for finding specific content
-- Testing search patterns with sample data ensures accuracy
+- Test search patterns against known samples before updating records.
 - Character encoding should be considered when working with AI-generated content
 
 ## 4. OpenRouter Integration Removal
@@ -115,13 +115,13 @@ The OpenRouter integration was no longer needed, but its removal required carefu
 
 - Confirmed only one integration-specific column existed
 - Decided to retain the column for historical data integrity
-- Ensured metrics continuity through existing logging mechanisms
+- Retained existing fields used by direct-provider records
 
 ### Lessons Learned
 
 - Minimal usage of a feature may justify its removal
 - Historical data should be preserved when possible
-- Metrics collection should be designed with flexibility in mind
+- Metric fields should have documented source and completeness.
 - Regular review of integrations helps maintain a clean codebase
 
 ## 5. Context Management for Large Conversations
@@ -141,7 +141,7 @@ Implemented intelligent context truncation:
 - Maintains most recent messages while removing older, less relevant content
 - Preserves user facts and important context
 - Adapts to different model token limits
-- Ensures prompts stay within specified constraints
+- Keeps prompts within the configured context budget
 
 ### Lessons Learned
 
@@ -162,7 +162,7 @@ Lack of proper indexing and inefficient query patterns.
 
 ### Solution
 
-Implemented a comprehensive indexing strategy:
+Added indexes for the documented query paths:
 
 - BTREE indexes on frequently queried fields (context identifiers, timestamps)
 - GIN index on JSONB column for efficient JSON querying
@@ -171,9 +171,9 @@ Implemented a comprehensive indexing strategy:
 ### Lessons Learned
 
 - Database performance requires ongoing monitoring
-- Appropriate indexing significantly improves query performance
+- Index impact should be confirmed with query plans and measurements.
 - Query patterns should be analyzed to determine optimal indexes
-- Regular database maintenance ensures continued performance
+- Database maintenance should be scheduled according to observed database behavior.
 
 ## 7. Environment Configuration Management
 
@@ -201,14 +201,6 @@ Implemented a centralized environment loader:
 - Validation of required configurations prevents runtime errors
 - Documentation of configuration options aids maintainability
 
-## Summary of Key Takeaways
+## Summary
 
-1. **Resilience**: Implement robust error handling and retry mechanisms for external API calls
-2. **Performance**: Optimize both application code and database queries
-3. **Flexibility**: Design systems to adapt to changing requirements
-4. **Monitoring**: Track key metrics to identify issues before they impact users
-5. **Simplicity**: Maintain a clean codebase by removing unused features and dependencies
-6. **Data Integrity**: Ensure data quality through validation and cleaning processes
-7. **User Experience**: Prioritize responsiveness and reliability in all design decisions
-
-These challenges and their solutions demonstrate the importance of thorough testing, monitoring, and continuous improvement in AI-powered applications.
+The documented changes address specific provider-limit, timeout, contaminated-data, context-size, query, and configuration problems. Broader reliability, performance, and monitoring outcomes require separate measurement.

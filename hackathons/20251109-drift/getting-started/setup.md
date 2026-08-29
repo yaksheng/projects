@@ -1,6 +1,6 @@
 # GalaxyRVR Setup Guide
 
-This guide will help you set up and run the GalaxyRVR autonomous navigation system, whether you're using the simulation environment or real hardware.
+This guide records the intended setup for the GalaxyRVR hackathon prototype. File names and commands must be checked against the separate source repository.
 
 ## Prerequisites
 
@@ -57,7 +57,9 @@ Run the simulation with custom configuration parameters.
 - `--visualize`: Enable real-time visualization
 - `--output <file>`: Save simulation results to file
 
-### Option 2: Real Hardware Mode
+### Proposed Real-Hardware Setup
+
+The following is a hardware-integration outline, not a validated operating procedure. Do not energize motors until an independent physical stop is available and sensor, communication, power, and direction checks have been completed with the drive wheels unloaded.
 
 #### Connect the Hardware
 1. Connect Arduino to computer via USB
@@ -69,9 +71,9 @@ Run the simulation with custom configuration parameters.
 
 Identify the Arduino port using system-specific commands.
 
-#### Run the Navigation System
+#### Exercise the Navigation Adapter
 
-Navigate to the autonomous navigation directory and run the main navigation script with appropriate port settings.
+After validating the source and hardware configuration, exercise the adapter at limited speed in a controlled area.
 
 #### Available Navigation Commands
 
@@ -156,10 +158,4 @@ Check the log files for debugging information.
 - [Vision System](../features/vision.md)
 - [Sensor Integration](../features/sensors.md)
 
-## Support
-
-If you encounter issues or have questions, please:
-1. Check the troubleshooting section above
-2. Review the documentation files
-3. Look at example usage files
-4. Contact the development team
+For problems, start with the troubleshooting section above and the linked architecture and feature notes.

@@ -1,103 +1,34 @@
 # API Design
 
-SourceVoice's API layer provides a comprehensive set of endpoints for voice processing, AI interaction, and negotiation tools, following RESTful principles and modern API design best practices.
+SourceVoice uses Next.js route handlers to keep model-provider credentials out of the browser and provide a small application-facing interface.
 
-## API Overview
+## Routes
 
-### Base URL
-All API endpoints are prefixed with `/api/` when running the application locally or deployed.
+### Chat
 
-### Authentication
-- API keys for external services are stored as environment variables
-- No authentication required for client-side API calls within the application
-- Rate limiting implemented for external API integrations
+`POST /api/chat` accepts user text, language, recent conversation context, and available manufacturing inputs. It returns model-generated guidance and structured data for the interface.
 
-### Response Format
-All API responses follow a consistent JSON format with success status, data field, and error field.
+### Text to Speech
 
-Error responses include error code and message fields.
+`POST /api/tts` accepts text and voice settings, calls ElevenLabs, and returns audio or an error response.
 
-## API Endpoints
+### Image Generation
 
-### 1. Chat API
+The image route accepts a prompt derived from reviewed part context and returns a generated visual reference.
 
-**Endpoint**: `POST /api/chat`
+Speech recognition uses the browser Web Speech API and does not require a server route in the documented prototype.
 
-**Description**: Processes user input and generates AI responses using Claude and Gemini APIs.
+## Error Handling
 
-**Request Body**: Contains messages array, user input, language, and context information.
+Route handlers should distinguish invalid input, missing configuration, provider rejection, provider timeout, and unexpected failures. The client should preserve editable user input and offer text fallback when speech or model services fail.
 
-**Response**: Includes conversational response, cost breakdown, visualization URL, and negotiation tips.
+## Security Boundaries
 
-### 2. Text-to-Speech API
+- Keep provider credentials in server-side environment configuration.
+- Validate request shape, size, language, and supported values.
+- Avoid logging sensitive negotiation content by default.
+- Treat provider usage controls and request throttling as configuration that must be verified, not assumed.
 
-**Endpoint**: `POST /api/tts`
+The prototype did not establish user authentication, authorization, durable audit records, formal threat modeling, or security testing.
 
-**Description**: Converts text to speech using ElevenLabs API.
-
-**Request Body**: Contains text, language, voice ID, and voice settings.
-
-**Response**:
-
-- **Success**: Audio blob (binary data) in MP3 format
-- **Error**: JSON error object
-
-### 3. Speech-to-Text API
-
-**Endpoint**: `POST /api/stt`
-
-**Description**: Converts speech to text using Web Speech API.
-
-**Request Body**: Multipart form data containing audio file and language.
-
-**Response**: Includes transcript, confidence score, and language.
-
-### 4. Image Generation API
-
-**Endpoint**: `POST /api/generate-image`
-
-**Description**: Generates mold visualizations using Gemini Image API.
-
-**Request Body**: Contains prompt, specifications, and style.
-
-**Response**: Includes image URL, prompt, and generation time.
-
-## API Implementation
-
-### Route Handlers
-
-All API endpoints are implemented using Next.js Route Handlers with request validation, error handling, and integration with AI services.
-
-### Integration Layer
-
-API endpoints integrate with external services through a dedicated integration layer that handles API client creation and request processing.
-
-### Error Handling
-
-Comprehensive error handling across all API endpoints with error codes for validation errors, AI API errors, audio processing errors, image generation errors, and internal server errors.
-
-## Performance Optimization
-
-- **Caching**: Frequently used responses cached for faster access
-- **Batching**: AI API calls batched when possible
-- **Compression**: Audio and image data compressed for efficient transfer
-- **Edge Deployment**: Next.js edge functions for low-latency processing
-
-## Rate Limiting
-
-- **Claude API**: 5 requests per second
-- **Gemini API**: 10 requests per second
-- **ElevenLabs API**: 10 requests per minute
-- **Web Speech API**: No explicit limits
-
-## Security Measures
-
-- **Input Validation**: All requests validated with Zod schemas
-- **API Key Protection**: External API keys stored as environment variables
-- **CORS Configuration**: Restricted to application domains
-- **Data Sanitization**: All user inputs sanitized to prevent injection attacks
-- **Audio Processing**: Local processing where possible to protect sensitive data
-
----
-
-[Back to Overview](../README.md)
+[Back to overview](../README.md)

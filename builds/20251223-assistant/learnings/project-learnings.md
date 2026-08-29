@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document captures the comprehensive learnings from the AI assistant project development journey. It covers the entire lifecycle from initial implementation to production deployment, highlighting key decisions, challenges, and best practices.
+This document records engineering lessons from implementation, debugging, optimization, data cleanup, and deployment of the AI assistant.
 
 ## Project Evolution
 
@@ -23,7 +23,7 @@ The project progressed through distinct phases, each with specific goals and lea
 
 **Key Learnings**:
 - Test with realistic workloads to uncover performance issues
-- Comprehensive logging is essential for debugging
+- Logs need enough request, provider, and error context for the specific debugging task
 - Automated testing reduces regression risks
 
 ### Phase 3: Performance Optimization
@@ -49,9 +49,9 @@ The project progressed through distinct phases, each with specific goals and lea
 **Focus**: Preparing for live usage
 
 **Key Learnings**:
-- Rate limit handling is non-negotiable for AI applications
-- Monitoring and alerting are essential for production support
-- Environment configuration should be centralized and secure
+- Provider-limit handling needs a bounded retry and terminal error path
+- Monitoring and alerting remain recommended operational work
+- Environment configuration should be centralized and access-controlled
 
 ## Technical Decision Making
 
@@ -79,7 +79,7 @@ The project progressed through distinct phases, each with specific goals and lea
 **Outcome**:
 - Normalized schema with appropriate indexes
 - JSONB columns for flexible data storage
-- Comprehensive logging of interactions and metrics
+- Interaction records with optional model and length fields
 
 ### Architecture Approach
 
@@ -92,9 +92,9 @@ The project progressed through distinct phases, each with specific goals and lea
 **Outcome**:
 - Modular architecture with clear boundaries
 - Well-defined interfaces between components
-- Easy testing and deployment of individual modules
+- Component boundaries that can support focused testing
 
-## Best Practices
+## Recommended Practices
 
 ### Development Workflow
 
@@ -107,14 +107,14 @@ The project progressed through distinct phases, each with specific goals and lea
 ### Error Handling
 
 1. **Graceful Degradation**: Provide meaningful feedback when errors occur
-2. **Retry Mechanisms**: Implement for transient failures
+2. **Retry Mechanisms**: Use bounded retries only for identified transient failures
 3. **Error Logging**: Capture sufficient context for debugging
 4. **User Communication**: Explain errors in user-friendly terms
 
 ### Performance Optimization
 
 1. **Profiling**: Identify bottlenecks before optimization
-2. **Caching**: Store frequently accessed data
+2. **Caching**: Evaluate caching only where staleness and privacy behavior are defined
 3. **Lazy Loading**: Load resources only when needed
 4. **Query Optimization**: Minimize database load
 5. **Token Management**: Control AI model token usage
@@ -122,7 +122,7 @@ The project progressed through distinct phases, each with specific goals and lea
 ### Data Management
 
 1. **Validation**: Ensure data integrity at entry
-2. **Backup**: Regular backups prevent data loss
+2. **Backup**: Define, run, and restore-test backups
 3. **Cleaning**: Remove test data and contaminants
 4. **Retention**: Define policies for data lifecycle
 5. **Privacy**: Protect user data according to regulations
@@ -131,10 +131,10 @@ The project progressed through distinct phases, each with specific goals and lea
 
 | Challenge | Solution | Key Insight |
 |-----------|----------|-------------|
-| OpenAI 429 Rate Limits | Exponential backoff with jitter | Rate limit handling is critical for AI applications |
+| OpenAI 429 Rate Limits | Exponential backoff with jitter | Bound provider retries and retain a terminal error path |
 | Response Timeouts | Increased timeouts to 60s | Complex models require appropriate processing time |
 | Contaminated Data | Pattern matching and nullification | Robust search methods handle edge cases |
-| Database Performance | Strategic indexing | Indexes significantly improve query speed |
+| Database Query Latency | Indexes for observed query paths | Confirm index impact with query plans and measurements |
 | Context Management | Intelligent truncation | Balance context retention with token limits |
 
 ## Future Recommendations
@@ -152,7 +152,7 @@ The project progressed through distinct phases, each with specific goals and lea
 - **Language**: TypeScript
 - **Framework**: Node.js with Vercel Serverless Functions
 - **Database**: PostgreSQL with Neon
-- **AI Providers**: Multiple APIs (details omitted for proprietary reasons)
+- **AI Providers**: Multiple model APIs selected by use case
 
 ### DevOps Tools
 - **Version Control**: Git
@@ -161,6 +161,4 @@ The project progressed through distinct phases, each with specific goals and lea
 
 ## Conclusion
 
-The AI assistant project provided valuable insights into building production-grade AI applications. Key takeaways include the importance of resilience, performance optimization, and data management. The modular architecture and robust error handling ensure the system can adapt to changing requirements and scale with user demand.
-
-By documenting these learnings, the project establishes a foundation for future AI application development, enabling teams to avoid common pitfalls and build on proven best practices. The experience demonstrates that with careful planning, thorough testing, and continuous improvement, AI-powered systems can deliver reliable, high-quality user experiences.
+The most reusable lessons are to bound model context, handle provider limits explicitly, index observed query paths, and remove test data before operational analysis.

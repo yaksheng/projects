@@ -1,10 +1,10 @@
 # GalaxyRVR Sensor System
 
-The GalaxyRVR sensor system provides the robot with environmental awareness, enabling it to detect obstacles, measure distances, and navigate safely in complex environments.
+The GalaxyRVR prototype combines proximity, camera, and odometry inputs for navigation experiments. The documentation does not establish safe navigation or calibrated hardware performance.
 
 ## Sensor System Overview
 
-GalaxyRVR integrates multiple sensor types to create a comprehensive understanding of its surroundings:
+GalaxyRVR integrates multiple sensor types to observe its surroundings:
 
 1. **Ultrasonic Sensors**: Measure distance to forward obstacles
 2. **Infrared (IR) Sensors**: Detect obstacles on left and right sides
@@ -48,9 +48,8 @@ graph LR
 ```
 
 - **Working Principle**: Emits sound waves and measures echo time
-- **Detection Range**: 2-300 cm
-- **Accuracy**: ±1 cm
-- **Update Rate**: 10 Hz
+- **Nominal Range**: Use the selected sensor's data sheet as a starting point, then calibrate on the robot
+- **Update Rate**: Configurable in the sensor loop
 - **Usage**: Forward obstacle detection
 
 ### 2. Infrared (IR) Sensors
@@ -69,8 +68,8 @@ graph LR
 ```
 
 - **Working Principle**: Measures reflected infrared light intensity
-- **Detection Range**: 10-80 cm
-- **Update Rate**: 20 Hz
+- **Range**: Depends on the selected sensor, target reflectivity, and calibration
+- **Update Rate**: Configurable in the sensor loop
 - **Usage**: Side obstacle detection
 - **Features**: Digital and analog output modes
 
@@ -87,8 +86,7 @@ graph LR
 ```
 
 - **Camera Types**: Overhead (global view) and onboard (local view)
-- **Resolution**: VGA (640x480) or higher
-- **Frame Rate**: 30 fps
+- **Resolution and Frame Rate**: Selected according to camera and compute limits
 - **Usage**: Target detection, line following, localization
 
 ### 4. Odometry Sensors
@@ -104,12 +102,12 @@ graph LR
 
 - **Working Principle**: Counts wheel rotations
 - **Accuracy**: Dependent on wheel size and terrain
-- **Update Rate**: 100 Hz
+- **Update Rate**: Selected according to encoder and controller limits
 - **Usage**: Dead reckoning, position estimation
 
 ## Sensor Fusion
 
-Sensor fusion combines data from multiple sensors to create a more accurate and reliable understanding of the environment:
+The sensor-fusion design combines observations from multiple inputs:
 
 ```mermaid
 graph TD
@@ -124,11 +122,12 @@ graph TD
     I --> J[Navigation Commands]
 ```
 
-### Fusion Benefits
-- **Increased Accuracy**: Combined data reduces individual sensor errors
-- **Enhanced Reliability**: Redundancy improves system robustness
-- **Better Coverage**: Multiple sensors provide complete environment awareness
-- **Reduced Uncertainty**: Confidence scoring improves decision making
+### Intended Fusion Benefits
+- Compare overlapping observations from different sensors.
+- Extend observation coverage beyond one sensor type.
+- Attach confidence information to inputs used by navigation logic.
+
+Accuracy and fault tolerance require calibration, conflict-handling rules, and hardware tests; they are not established by the architecture alone.
 
 ## Sensor Calibration
 
@@ -170,12 +169,9 @@ graph TD
 - Data packet structure
 - Error checking mechanisms
 
-## Performance Characteristics
+## Performance Evaluation
 
-- **Total Sensor Update Rate**: 50 Hz combined
-- **Latency**: <50 ms from sensor to navigation system
-- **Power Consumption**: Optimized for battery operation
-- **Environmental Resistance**: Dust and vibration resistant
+Update rate, end-to-end latency, power use, dust exposure, and vibration tolerance require measurement on the assembled robot. The prototype documentation does not establish environmental ratings.
 
 ## Integration with Navigation
 
@@ -187,10 +183,10 @@ graph TD
 ### Path Planning
 - Sensor data updates obstacle map
 - Dynamic path replanning
-- Safe distance calculations
+- Configurable distance thresholds for obstacle-avoidance experiments
 
 ### Motor Control
-- Sensor triggers for emergency stops
+- Sensor inputs to proposed emergency-stop logic
 - Proximity warnings for speed adjustments
 - Collision detection for immediate action
 

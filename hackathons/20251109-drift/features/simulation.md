@@ -1,11 +1,11 @@
 # GalaxyRVR Simulation
 
-The GalaxyRVR simulation environment provides a virtual testing platform for autonomous navigation algorithms, allowing developers to test and refine their code without physical hardware.
+The GalaxyRVR simulation is a prototype environment for exercising navigation logic without physical hardware.
 
 ## Overview
 
 The simulation environment replicates the physical robot and its environment in software, including:
-- Physics-based robot movement
+- Simplified robot movement
 - Sensor data simulation
 - Virtual arena with obstacles
 - Performance metrics and visualization
@@ -37,7 +37,7 @@ graph TD
 - Lighting and camera perspective simulation
 
 ### Physics Simulation
-- Realistic robot movement physics
+- Configurable movement model
 - Friction and inertia modeling
 - Motor speed and acceleration limits
 - Collision detection
@@ -50,8 +50,8 @@ graph TD
 
 ### Integration
 - Direct integration with navigation algorithms
-- Same API as physical robot
-- Seamless transition between simulation and real hardware
+- Intended interface alignment with the physical-robot adapter
+- Manual transition between simulation and hardware configurations
 - Debug information and visualization
 
 ## Technical Implementation
@@ -115,14 +115,16 @@ The simulation provides detailed performance metrics:
 - Sensor data visualization
 - Collision analysis
 
-## Benefits of Simulation
+## Uses and Limitations
 
 - **Cost-effective**: No physical hardware required
-- **Safe**: Test potentially dangerous scenarios
+- **Isolation**: Exercise failure scenarios without commanding physical motors
 - **Fast iteration**: Rapidly test algorithm changes
-- **Controlled environment**: Reproducible test cases
+- **Controlled environment**: Repeat scenarios under the same simulation configuration
 - **Scalable**: Test with multiple configurations
 - **Educational**: Learn navigation concepts without hardware
+
+The movement, collision, sensor, lighting, and timing models are not documented as validated against the physical robot. Simulation does not verify hardware safety or performance.
 
 ## Getting Started
 
@@ -143,7 +145,9 @@ The simulation framework can be extended by:
 
 ## Testing Capabilities
 
+These are intended uses of the simulation rather than evidence of completed test coverage:
+
 - Unit tests for individual components
 - Integration tests for complete navigation workflows
-- Regression tests to ensure algorithm stability
+- Regression scenarios for detecting behavior changes
 - Performance benchmarking across configurations

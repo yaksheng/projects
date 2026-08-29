@@ -1,6 +1,6 @@
 # GalaxyRVR Autonomous Navigation
 
-This hackathon project combined cameras, proximity sensors, route planning, and simulation to navigate a small mobile robot.
+This hackathon prototype explored cameras, proximity sensors, route planning, and simulation for a small mobile robot. The documentation records the intended design and prototype work; it does not establish hardware validation of autonomous or safety behavior.
 
 ## Project Scope
 
@@ -26,6 +26,20 @@ graph TD
 ## Technology
 
 The project documentation covers Python, OpenCV, Arduino, serial communication, and camera and proximity sensor integration.
+
+## Limitations
+
+Navigation, sensor fusion, hybrid vision, obstacle avoidance, emergency stopping, low-battery handling, and sensor-failure handling require calibration and hardware testing under defined conditions. Simulation results do not establish physical-robot performance.
+
+## Documentation
+
+- [Project summary](SUMMARY.md)
+- [Architecture](architecture/ARCHITECTURE.md)
+- [Setup guide](getting-started/setup.md)
+- [Navigation](features/navigation.md)
+- [Sensors](features/sensors.md)
+- [Simulation](features/simulation.md)
+- [Vision](features/vision.md)
 
 ## License
 

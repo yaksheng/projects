@@ -1,25 +1,25 @@
 # Projects
 
-This repository is a public documentation workspace for selected hackathon builds and deployed technical projects. It focuses on project scope, architecture, workflows, and engineering learnings from work developed in separate project repositories.
+Case studies, hackathon projects, and speaking records covering product scope, architecture, workflows, and engineering lessons.
 
-For current selected work and presentations, see [my GitHub profile](https://github.com/yaksheng) or [yaksheng.com](https://yaksheng.com/).
+## Talks and Demonstrations
+
+[View the complete speaking record](talks/), including presentations, seminars, walkthroughs, and hardware demonstrations.
 
 ## Hackathons
 
-| Date | Project | Focus |
-| --- | --- | --- |
-| 2025-12-11 | [SourceVoice](hackathons/20251211-elevenlabs/) | Voice assisted manufacturing negotiation |
-| 2025-12-06 | [AI Hardware Design Platform](hackathons/20251206-cursor-my/) | AI assisted hardware design workflows |
-| 2025-11-09 | [GalaxyRVR](hackathons/20251109-drift/) | Autonomous robot navigation |
-| 2025-10-31 | [SingHacks Insurance Platform](hackathons/20251031-singhacks/) | Conversational travel insurance |
-| 2025-10-18 | [Financial Wellness Platform](hackathons/20251018-cursor/) | Financial education and habit building |
+- **11 Dec 2025:** [SourceVoice](hackathons/20251211-elevenlabs/), a voice-assisted manufacturing negotiation prototype
+- **6 Dec 2025:** [AI Hardware Design Platform](hackathons/20251206-cursor-my/), an AI-assisted hardware design workflow
+- **9 Nov 2025:** [GalaxyRVR](hackathons/20251109-drift/), an autonomous robot navigation prototype
+- **31 Oct 2025:** [SingHacks Insurance Platform](hackathons/20251031-singhacks/), a conversational travel insurance prototype
+- **18 Oct 2025:** [Financial Wellness Platform](hackathons/20251018-cursor/), a financial education and habit-building prototype
 
-## Technical Projects
+## Deployed Builds
 
-| Date | Project | Focus |
-| --- | --- | --- |
-| 2025-12-28 | [Cloud Query Pipeline](personal/20251228-etl/) | Deployed data pipeline, partitioned queries, and incident analysis |
-| 2025-12-23 | [AI Assistant](personal/20251223-assistant/) | Deployed assistant with model routing, context management, and operations |
+- **28 Dec 2025:** [Cloud Query Pipeline](builds/20251228-etl/), covering partitioned queries and incident analysis
+- **23 Dec 2025:** [AI Assistant](builds/20251223-assistant/), covering model routing, context management, and operations
+
+Related source code and presentation assets are linked from individual entries. More current work is available on [my GitHub profile](https://github.com/yaksheng) and [yaksheng.com](https://yaksheng.com/).
 
 ## License
 
